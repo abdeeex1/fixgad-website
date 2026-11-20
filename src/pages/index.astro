@@ -1,0 +1,182 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const services = [
+  ['Plumbing','Wrench'],['Electrical work','Bolt'],['Air conditioning','Snow'],['Painting','Brush'],
+  ['Carpentry','Saw'],['Cleaning','Spark'],['Appliance repair','Gear'],['Installation','Tool'],['General maintenance','Grid']
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>FIXGAD — Find skilled professionals across Morocco</title>
+    <meta name="description" content="FIXGAD is a map-first marketplace connecting customers with independent skilled professionals across Morocco. Starting in Agadir." />
+    <meta property="og:title" content="FIXGAD — Built for Morocco" />
+    <meta property="og:description" content="Find the right professional. Right around you." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-cover.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <div id="top"></div>
+    <Header />
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="kicker">BUILT FOR MOROCCO · STARTING IN AGADIR</p>
+            <h1 data-i18n="hero.headline">Find the right professional.<br/><em>Right around you.</em></h1>
+            <p class="lead" data-i18n="hero.support">FIXGAD connects people across Morocco with skilled local professionals through one simple, map-first marketplace.</p>
+            <div class="button-row">
+              <a class="button" href="#early-access" data-i18n="hero.join">Join early access</a>
+              <a class="text-link" href="#hrayfis" data-i18n="hero.hrayfi">Become a Hrayfi <span>→</span></a>
+            </div>
+          </div>
+          <div class="product-stage" aria-label="Illustration of the FIXGAD product interface">
+            <div class="map-card">
+              <div class="map-toolbar"><span class="search-dot"></span><span>Agadir, Morocco</span><span class="filter-pill">Plumbing</span></div>
+              <svg class="demo-map" viewBox="0 0 700 480" role="img" aria-label="Illustrative map of Agadir service area">
+                <rect width="700" height="480" fill="#e8ede4"/>
+                <path d="M0 70 C150 30 220 110 350 65 S560 35 700 90" fill="none" stroke="#d2dacb" stroke-width="18"/>
+                <path d="M40 430 C170 340 270 390 360 290 S520 220 680 260" fill="none" stroke="#fff" stroke-width="22"/>
+                <path d="M140 0 C200 120 160 220 260 480M390 0 C340 160 460 270 430 480M560 0 C520 170 610 280 680 400" fill="none" stroke="#f8faf6" stroke-width="13"/>
+                <g class="illustrative-marker"><circle cx="340" cy="238" r="30" fill="#C75B39"/><path d="M330 239h20M340 229v20" stroke="#fff" stroke-width="5"/></g>
+                <g class="illustrative-marker"><circle cx="470" cy="172" r="23" fill="#66744A"/><circle cx="470" cy="172" r="7" fill="#fff"/></g>
+                <g class="illustrative-marker"><circle cx="220" cy="330" r="23" fill="#66744A"/><circle cx="220" cy="330" r="7" fill="#fff"/></g>
+                <g class="illustrative-marker"><circle cx="540" cy="340" r="23" fill="#17221D"/><circle cx="540" cy="340" r="7" fill="#fff"/></g>
+              </svg>
+              <div class="map-label">Illustrative area · not live availability</div>
+              <div class="mission-card">
+                <div class="mission-top"><span class="icon-box">F</span><div><strong>Mission nearby</strong><small>Illustrative</small></div></div>
+                <p>Kitchen tap repair</p>
+                <div class="mission-meta"><span>Plumbing</span><span>Agadir area</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="map" class="map-section section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="kicker" data-i18n="map.eyebrow">THE MAP-FIRST EXPERIENCE</p>
+            <h2 data-i18n="map.title">Services are closer than you think.</h2>
+            <p data-i18n="map.copy">Create a Mission, share the work and let relevant Hrayfis discover opportunities near you. This public demo uses sample locations only—never real professionals or live availability.</p>
+          </div>
+          <div class="map-demo">
+            <aside class="category-panel">
+              <div class="panel-heading"><strong data-i18n="map.filters">Filter services</strong><span class="sample-badge" data-i18n="map.sample">Illustrative markers</span></div>
+              <div class="category-filters" role="group" aria-label="Service filters">
+                <button class="active" type="button" data-category="all">All</button>
+                <button type="button" data-category="plumbing">Plumbing</button>
+                <button type="button" data-category="electrical">Electrical</button>
+                <button type="button" data-category="painting">Painting</button>
+              </div>
+              <div class="map-list" id="map-list">
+                <article data-category="plumbing"><span class="service-pin terra">P</span><div><strong>Illustrative plumbing marker</strong><small>Agadir area · sample only</small></div></article>
+                <article data-category="electrical"><span class="service-pin olive">E</span><div><strong>Illustrative electrical marker</strong><small>Agadir area · sample only</small></div></article>
+                <article data-category="painting"><span class="service-pin ink">A</span><div><strong>Illustrative painting marker</strong><small>Agadir area · sample only</small></div></article>
+              </div>
+            </aside>
+            <div class="interactive-map" id="interactive-map">
+              <div class="view-toggle"><button type="button" data-view="map" class="active" data-i18n="map.toggleMap">Map</button><button type="button" data-view="list" data-i18n="map.toggleList">List</button></div>
+              <svg viewBox="0 0 860 540" role="img" aria-label="Illustrative Morocco map focused around Agadir">
+                <path d="M140 430L175 330L240 280L300 220L390 190L470 205L540 160L620 130L710 155L760 220L720 290L650 330L580 390L500 430L420 405L330 450L220 470Z" fill="#F1EEE5" stroke="#CFCAB9" stroke-width="3"/>
+                <path d="M300 220 C350 260 390 310 420 405M390 190 C430 230 470 290 500 430M470 205 C520 250 555 300 580 390M540 160 C590 210 620 250 650 330" fill="none" stroke="#DDE2D5" stroke-width="8"/>
+                <g class="city" transform="translate(190 385)"><circle r="5"/><text x="-20" y="20">Agadir</text></g>
+                <g class="city" transform="translate(290 280)"><circle r="5"/><text x="-18" y="-12">Marrakech</text></g>
+                <g class="city" transform="translate(410 220)"><circle r="5"/><text x="10" y="-12">Rabat</text></g>
+                <g class="city" transform="translate(470 255)"><circle r="5"/><text x="10" y="6">Casablanca</text></g>
+                <g class="city" transform="translate(520 170)"><circle r="5"/><text x="10" y="-8">Tangier</text></g>
+                <g class="city" transform="translate(590 230)"><circle r="5"/><text x="10" y="-8">Fes</text></g>
+                <g class="city" transform="translate(690 240)"><circle r="5"/><text x="10" y="-8">Oujda</text></g>
+                <g class="city" transform="translate(550 300)"><circle r="5"/><text x="10" y="-8">Meknes</text></g>
+                <g data-category="plumbing" class="map-pin" transform="translate(210 348)"><circle r="24" fill="#C75B39"/><text x="-6" y="7" fill="#fff">P</text></g>
+                <g data-category="electrical" class="map-pin" transform="translate(250 372)"><circle r="21" fill="#66744A"/><text x="-6" y="7" fill="#fff">E</text></g>
+                <g data-category="painting" class="map-pin" transform="translate(180 410)"><circle r="21" fill="#17221D"/><text x="-6" y="7" fill="#fff">A</text></g>
+              </svg>
+              <div class="map-disclaimer">All markers are illustrative · exact addresses are never shown</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="how" class="section">
+        <div class="container">
+          <div class="section-heading centered"><p class="kicker" data-i18n="how.eyebrow">HOW IT WORKS</p><h2 data-i18n="how.title">From a need to a trusted service.</h2></div>
+          <div class="journeys">
+            <article class="journey-card">
+              <h3 data-i18n="how.customer">For customers</h3>
+              <ol><li><b>01</b><div><strong>Create a Mission</strong><span>Describe the work and add photos.</span></div></li><li><b>02</b><div><strong>Receive offers</strong><span>Relevant professionals respond.</span></div></li><li><b>03</b><div><strong>Compare professionals</strong><span>Review profiles and offers.</span></div></li><li><b>04</b><div><strong>Choose your Hrayfi</strong><span>Select the right fit.</span></div></li><li><b>05</b><div><strong>Complete & review</strong><span>Finish the service and leave feedback.</span></div></li></ol>
+            </article>
+            <article class="journey-card hrayfi-card">
+              <h3 data-i18n="how.hrayfi">For Hrayfis</h3>
+              <ol><li><b>01</b><div><strong>Create a professional profile</strong><span>Present your craft and experience.</span></div></li><li><b>02</b><div><strong>Select skills & areas</strong><span>Choose what you do and where.</span></div></li><li><b>03</b><div><strong>Discover nearby Missions</strong><span>Find relevant local opportunities.</span></div></li><li><b>04</b><div><strong>Submit offers</strong><span>Propose your approach clearly.</span></div></li><li><b>05</b><div><strong>Grow your reputation</strong><span>Build trust through reliable work.</span></div></li></ol>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="customers" class="audience customer-section">
+        <div class="container audience-grid">
+          <div class="audience-visual customer-visual" aria-label="Illustrative Mission comparison">
+            <div class="phone-card"><div class="phone-head"><span>My Mission</span><b>•••</b></div><div class="photo-placeholder"></div><h3>Kitchen sink repair</h3><p>Agadir area · Illustrative</p><div class="offer-row"><span>A</span><div><strong>2 offers</strong><small>Compare professionals</small></div></div></div>
+          </div>
+          <div class="audience-copy"><p class="kicker" data-i18n="customer.eyebrow">FOR CUSTOMERS</p><h2 data-i18n="customer.title">One clear place to find the right help.</h2><p data-i18n="customer.copy">Describe the job, add photos and location, compare clear offers, then choose the professional that fits your needs.</p><ul class="feature-list"><li><b>01</b> Location-based discovery</li><li><b>02</b> Photo-supported Missions</li><li><b>03</b> Compare offers clearly</li><li><b>04</b> Explore professional profiles</li></ul><a class="button" href="#early-access" data-i18n="customer.cta">Join as a customer</a></div>
+        </div>
+      </section>
+
+      <section id="hrayfis" class="audience hrayfi-section">
+        <div class="container audience-grid reverse">
+          <div class="audience-copy"><p class="kicker" data-i18n="hrayfi.eyebrow">FOR HRAYFIS</p><h2 data-i18n="hrayfi.title">Turn your craft into new opportunities.</h2><p data-i18n="hrayfi.copy">Build a professional profile, choose your skills and service areas, discover nearby Missions and grow a reputation through reliable work.</p><ul class="feature-list"><li><b>01</b> A profile for your craft</li><li><b>02</b> Skills and service areas</li><li><b>03</b> Relevant local opportunities</li><li><b>04</b> Offers and reputation</li></ul><a class="button button-dark" href="#early-access" data-i18n="hrayfi.cta">Become a Hrayfi</a></div>
+          <div class="audience-visual hrayfi-visual" aria-label="Illustrative Hrayfi profile"><div class="profile-card"><div class="profile-head"><span class="avatar">H</span><div><strong>Your professional profile</strong><small>Independent Hrayfi</small></div></div><div class="skill-row"><span>Plumbing</span><span>Installation</span></div><div class="profile-stat"><b>5</b><span>Skills selected</span></div><div class="profile-stat"><b>3</b><span>Areas selected</span></div></div></div>
+        </div>
+      </section>
+
+      <section id="services" class="section services-section">
+        <div class="container"><div class="section-heading centered"><p class="kicker">ILLUSTRATIVE CATEGORIES</p><h2>Everyday skills. Essential work.</h2></div><div class="service-grid">
+          {services.map(([name, icon]) => <article><span class="service-icon" aria-hidden="true">{icon === 'Wrench' ? '⌁' : icon === 'Bolt' ? 'ϟ' : icon === 'Snow' ? '❄' : icon === 'Brush' ? '◫' : icon === 'Saw' ? '◇' : icon === 'Spark' ? '✦' : icon === 'Gear' ? '⚙' : icon === 'Tool' ? '⛏' : '≋'}</span><h3>{name}</h3><span>Illustrative category</span></article>)}
+        </div></div>
+      </section>
+
+      <section class="vision-section">
+        <div class="container vision-grid">
+          <div class="vision-map" aria-label="Stylized map of Morocco with major city labels">
+            <svg viewBox="0 0 540 380" role="img"><path d="M65 330L95 235L150 195L210 130L290 115L350 85L430 105L480 160L450 225L390 260L330 330L250 315L180 350Z" fill="#D9DFD1" stroke="#9FA98F" stroke-width="3"/><g fill="#17221D" font-size="14"><text x="55" y="330">Agadir</text><text x="145" y="195">Marrakech</text><text x="230" y="125">Rabat</text><text x="280" y="155">Casablanca</text><text x="360" y="95">Tangier</text><text x="430" y="225">Oujda</text><text x="315" y="250">Fes</text><text x="330" y="300">Meknes</text></g><circle cx="95" cy="235" r="9" fill="#C75B39"/></svg>
+          </div>
+          <div class="vision-copy"><p class="kicker" data-i18n="vision.eyebrow">MOROCCO-WIDE VISION</p><h2 data-i18n="vision.title">One vision. All of Morocco.</h2><p data-i18n="vision.copy">Agadir is our initial operational launch area. We are building for Morocco, with planned expansion to more cities over time. This is not yet a nationwide live service.</p><div class="tagline"><span></span> Built for Morocco. Starting in Agadir.</div></div>
+        </div>
+      </section>
+
+      <section id="about" class="section about-section">
+        <div class="container about-grid"><div><p class="kicker" data-i18n="about.eyebrow">ABOUT FIXGAD</p><h2 data-i18n="about.title">Make skilled help simple. Make opportunity local.</h2></div><div><p class="mission" data-i18n="about.mission">Our mission is to make finding skilled local professionals simpler and create opportunities for independent Hrayfis.</p><h3 data-i18n="about.values">Our values</h3><div class="values"><span>Accessibility</span><span>Transparency</span><span>Opportunity</span><span>Local impact</span><span>Innovation</span><span>Trust</span></div></div></div>
+      </section>
+
+      <section id="early-access" class="early-access">
+        <div class="container access-grid"><div class="access-copy"><p class="kicker" data-i18n="access.eyebrow">EARLY ACCESS</p><h2 data-i18n="access.title">Help shape the first FIXGAD experience.</h2><p data-i18n="access.copy">Choose your path and register your interest. This form is ready for a future secure Supabase connection and does not store submissions yet.</p></div>
+          <form id="early-access-form" class="access-form" novalidate>
+            <fieldset class="type-picker"><legend>Registration type</legend><label><input type="radio" name="type" value="customer" checked/><span>Customer</span></label><label><input type="radio" name="type" value="hrayfi"/><span>Hrayfi</span></label></fieldset>
+            <div class="form-row"><label>Full name<input name="name" autocomplete="name" required/></label><label>Email<input type="email" name="email" autocomplete="email" required/></label></div>
+            <div class="form-row"><label>City<input name="city" autocomplete="address-level2" required/></label><label id="category-field" hidden>Professional category<select name="category"><option value="">Select a category</option>{services.map(([name]) => <option value={name}>{name}</option>)}</select></label></div>
+            <label class="consent"><input type="checkbox" name="consent" required/><span>I consent to FIXGAD contacting me about early access.</span></label>
+            <p class="form-status" id="form-status" role="status"></p>
+            <button class="button button-wide" type="submit">Register interest</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section">
+        <div class="container contact-grid"><div><p class="kicker" data-i18n="contact.eyebrow">CONTACT</p><h2 data-i18n="contact.title">Let’s talk.</h2></div><div class="contact-links"><a href="mailto:fixgad.info@gmail.com">fixgad.info@gmail.com</a><a href="https://www.instagram.com/fixgad.ma/" rel="noopener">Instagram ↗</a><a href="https://www.tiktok.com/@fixgad.ma" rel="noopener">TikTok ↗</a><a href="https://www.facebook.com/" rel="noopener">Facebook: FIXGAD ↗</a></div></div>
+      </section>
+    </main>
+    <Footer />
+    <script>
+      import '../scripts/site';
+    </script>
+  </body>
+</html>
