@@ -1,0 +1,29 @@
+---
+import Layout from '../components/Layout.astro';
+const services = [
+  ['PL','Plomberie','Fuites, robinetterie, installations'],['EL','Électricité','Pannes, prises, installations'],
+  ['AC','Climatisation','Entretien, dépannage, pose'],['PT','Peinture','Intérieur, extérieur, finitions'],
+  ['CP','Menuiserie','Bois, portes, mobilier sur mesure'],['AR','Électroménager','Diagnostic, réparation, pose'],
+  ['CL','Nettoyage','Maison, appartement, bureaux'],['GM','Maintenance','Petits travaux, entretien courant'],
+  ['CR','Construction & rénovation','Travaux, rénovation, aménagement'],['OT','Autres services','Précisez votre besoin']
+];
+---
+<Layout title="Services — FIXGAD" description="Explorez les catégories de services disponibles sur FIXGAD.">
+  <section class="page-hero"><div class="container narrow"><p class="eyebrow">LES SERVICES</p><h1>Une aide qualifiée,<br/><em>pour chaque besoin.</em></h1><p>Choisissez une catégorie pour rejoindre l’expérience FIXGAD.</p></div></section>
+  <section class="section services-index"><div class="container"><div class="service-toolbar"><div class="service-search"><span>⌕</span><input id="service-filter" type="search" placeholder="Rechercher un service" aria-label="Rechercher un service" /></div><span id="service-count">10 services</span></div><div class="catalog-grid">{services.map(([code,name,copy]) => <article class="catalog-card" data-service-name={name.toLowerCase()}><span class="catalog-code">{code}</span><div><h2>{name}</h2><p>{copy}</p></div><a href="/early-access/" aria-label={`Demander ${name}`}>Demander ce service <b>→</b></a></article>)}</div></div></section>
+  <script>
+    const input = document.querySelector<HTMLInputElement>('#service-filter');
+    const cards = [...document.querySelectorAll<HTMLElement>('.catalog-card')];
+    const count = document.querySelector<HTMLElement>('#service-count');
+    input?.addEventListener('input', () => {
+      const query = input.value.trim().toLowerCase();
+      let visible = 0;
+      cards.forEach((card) => {
+        const show = !query || card.dataset.serviceName?.includes(query);
+        card.hidden = !show;
+        if (show) visible++;
+      });
+      if (count) count.textContent = `${visible} service${visible === 1 ? '' : 's'}`;
+    });
+  </script>
+</Layout>

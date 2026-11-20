@@ -42,30 +42,10 @@ mainNav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', 
   mainNav.classList.remove('open');
 }));
 
-document.querySelectorAll<HTMLButtonElement>('[data-category]').forEach((button) => {
-  button.addEventListener('click', () => {
-    if (!button.classList.contains('category-filters')) return;
-  });
-});
-const filterButtons = document.querySelectorAll<HTMLButtonElement>('.category-filters button');
-filterButtons.forEach((button) => button.addEventListener('click', () => {
-  filterButtons.forEach((item) => item.classList.remove('active'));
+const appCategoryButtons = document.querySelectorAll<HTMLButtonElement>('.app-categories button');
+appCategoryButtons.forEach((button) => button.addEventListener('click', () => {
+  appCategoryButtons.forEach((item) => item.classList.remove('active'));
   button.classList.add('active');
-  const category = button.dataset.category;
-  document.querySelectorAll<HTMLElement>('#map-list article').forEach((item) => {
-    item.hidden = category !== 'all' && item.dataset.category !== category;
-  });
-  document.querySelectorAll<HTMLElement>('.map-pin').forEach((item) => {
-    item.style.display = category === 'all' || item.dataset.category === category ? '' : 'none';
-  });
-}));
-
-document.querySelectorAll<HTMLButtonElement>('[data-view]').forEach((button) => button.addEventListener('click', () => {
-  document.querySelectorAll<HTMLButtonElement>('[data-view]').forEach((item) => item.classList.remove('active'));
-  button.classList.add('active');
-  const listView = button.dataset.view === 'list';
-  document.querySelector('.category-panel')?.classList.toggle('list-focus', listView);
-  document.querySelector('.interactive-map')?.classList.toggle('hidden-view', listView);
 }));
 
 const form = document.querySelector<HTMLFormElement>('#early-access-form');
