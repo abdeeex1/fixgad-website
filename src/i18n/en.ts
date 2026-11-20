@@ -1,6 +1,6 @@
 export default {
   nav:{home:'Home',how:'How it works',customers:'For customers',hrayfis:'For Hrayfis',services:'Services',about:'About',join:'Join early access'},
-  hero:{headline:'Find the right professional. Right around you.',support:'FIXGAD connects people across Morocco with skilled local professionals through one simple, map-first marketplace.',join:'Join early access',hrayfi:'Become a Hrayfi'},
+  hero:{headline:'Your home deserves the right hands.',support:'From everyday repairs to essential home services, FIXGAD connects you with trusted independent professionals around you.',join:'Find a professional',hrayfi:'Become a Hrayfi'},
   map:{eyebrow:'THE MAP-FIRST EXPERIENCE',title:'Services are closer than you think.',copy:'Create a Mission, share the work and let relevant Hrayfis discover opportunities near you. This public demo uses sample locations only—never real professionals or live availability.',filters:'Filter services',sample:'Illustrative markers',toggleMap:'Map',toggleList:'List'},
   how:{eyebrow:'HOW IT WORKS',title:'From a need to a trusted service.',customer:'For customers',hrayfi:'For Hrayfis'},
   customer:{eyebrow:'FOR CUSTOMERS',title:'One clear place to find the right help.',copy:'Describe the job, add photos and location, compare clear offers, then choose the professional that fits your needs.',cta:'Join as a customer'},

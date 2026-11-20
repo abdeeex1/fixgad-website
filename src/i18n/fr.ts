@@ -1,6 +1,6 @@
 export default {
   nav:{home:'Accueil',how:'Comment ça marche',customers:'Pour les clients',hrayfis:'Pour les Hrayfis',services:'Services',about:'À propos',join:'Accès anticipé'},
-  hero:{headline:'Trouvez le bon professionnel. Tout près de vous.',support:'FIXGAD relie les habitants du Maroc à des professionnels qualifiés grâce à une marketplace locale simple et centrée sur la carte.',join:'Accès anticipé',hrayfi:'Devenir Hrayfi'},
+  hero:{headline:'Votre maison mérite les bonnes mains.',support:'Des réparations du quotidien aux services essentiels, FIXGAD vous met en relation avec des professionnels indépendants de confiance près de chez vous.',join:'Trouver un professionnel',hrayfi:'Devenir Hrayfi'},
   map:{eyebrow:'EXPÉRIENCE CARTOGRAPHIQUE',title:'Les services sont plus proches que vous ne le pensez.',copy:'Créez une Mission, décrivez le travail et permettez aux Hrayfis concernés de découvrir des opportunités à proximité. Cette démonstration utilise uniquement des emplacements fictifs.',filters:'Filtrer les services',sample:'Marqueurs illustratifs',toggleMap:'Carte',toggleList:'Liste'},
   how:{eyebrow:'COMMENT ÇA MARCHE',title:'Du besoin au service de confiance.',customer:'Pour les clients',hrayfi:'Pour les Hrayfis'},
   customer:{eyebrow:'POUR LES CLIENTS',title:'Un seul espace clair pour trouver la bonne aide.',copy:'Décrivez le travail, ajoutez des photos et une localisation, comparez les offres, puis choisissez le professionnel adapté.',cta:'Rejoindre comme client'},
